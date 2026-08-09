@@ -1,0 +1,803 @@
+/* ==========================================================================
+   Cropton Agritech — Premium Modern Startup Stylesheet
+   ========================================================================== */
+
+:root {
+  /* Premium Dark Agritech Palette */
+  --bg-dark: #031F1A;
+  --bg-emerald: #043B30;
+  --bg-emerald-deep: #054a3e;
+  --bg-sage: #F0FDF4; /* Very Light Green */
+  
+  --accent-lime: #A3E635;
+  --accent-lime-hover: #bef264;
+  --accent-bright: #10B981;
+  --accent-warm: #D9F99D;
+  
+  --text-dark: #064E3B;
+  --text-muted: #4B5563;
+  --text-light: #ECFDF5;
+  --text-muted-light: #9CA3AF;
+  
+  --white: #FFFFFF;
+  --border-light: rgba(255,255,255,0.1);
+  --border-dark: #E5E7EB;
+  
+  /* UI System */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 30px rgba(163, 230, 53, 0.15); /* Lime Glow */
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
+body { background-color: var(--white); color: var(--text-dark); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+.container { width: 90%; max-width: 1240px; margin: 0 auto; }
+.section-padding { padding: 120px 0; }
+.text-center { text-align: center; }
+
+/* --------------------------------------
+   Utility Colors & Backgrounds
+--------------------------------------- */
+.bg-sage { background-color: var(--bg-sage); }
+.bg-emerald { background-color: var(--bg-emerald); }
+.bg-dark { background-color: var(--bg-dark); }
+.bg-deep-dark { background-color: #01120f; }
+
+.text-white { color: var(--white); }
+.text-lime { color: var(--accent-lime); }
+.text-light-gray { color: var(--text-light); }
+.text-muted-light { color: var(--text-muted-light); }
+.dark-text { color: var(--bg-emerald); }
+
+.bg-white-pad { background: white; padding: 4px; border-radius: 6px; }
+
+/* --------------------------------------
+   Typography & Titles
+--------------------------------------- */
+.section-title { margin-bottom: 56px; }
+.sub-heading { font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: block; margin-bottom: 12px; }
+.section-title h2 { font-size: 2.5rem; font-weight: 800; }
+.title-underline { width: 70px; height: 5px; background: var(--accent-lime); margin: 16px auto 0; border-radius: 4px; }
+
+/* --------------------------------------
+   Buttons
+--------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 32px; font-size: 1rem; font-weight: 700; border-radius: 30px;
+  cursor: pointer; border: none; transition: var(--transition);
+}
+
+.btn-primary-lime {
+  background: var(--accent-lime); color: var(--bg-dark);
+  box-shadow: 0 10px 20px rgba(163, 230, 53, 0.2);
+}
+.btn-primary-lime:hover { background: var(--accent-lime-hover); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(163, 230, 53, 0.3); }
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.05); color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);
+}
+.btn-glass:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-3px); }
+
+.btn-primary-alt { background: var(--bg-emerald); color: var(--white); }
+.btn-primary-alt:hover { background: var(--bg-dark); transform: translateY(-3px); }
+.btn-dark { background: var(--bg-dark); color: var(--white); }
+.btn-dark:hover { background: #000; transform: translateY(-3px); }
+
+.btn-block { width: 100%; }
+.btn-sm { padding: 10px 20px; font-size: 0.9rem; }
+
+/* --------------------------------------
+   Navbar (Dark Theme adaptation)
+--------------------------------------- */
+.top-bar { background: #01120f; color: var(--text-light); font-size: 0.825rem; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.top-bar-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.top-info, .top-contacts { display: flex; gap: 24px; align-items: center; }
+.top-contacts a:hover { color: var(--accent-lime); }
+
+.header {
+  position: sticky; top: 0; background: rgba(3, 31, 26, 0.8);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); transition: var(--transition);
+}
+.header.scrolled { background: rgba(3, 31, 26, 0.98); box-shadow: var(--shadow-md); }
+.navbar { display: flex; align-items: center; justify-content: space-between; height: 90px; transition: var(--transition); }
+.header.scrolled .navbar { height: 75px; }
+
+.logo-img { height: 50px; }
+.nav-list { display: flex; gap: 40px; }
+.nav-link { font-weight: 600; color: var(--text-light); position: relative; padding: 8px 0; font-size: 0.95rem; }
+.nav-link:hover, .nav-link.active { color: var(--accent-lime); }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 3px; background: var(--accent-lime); border-radius: 2px; transition: var(--transition); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.header-actions { display: flex; align-items: center; gap: 16px; }
+.lang-btn {
+  display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); color: var(--white);
+  border: 1px solid rgba(255,255,255,0.2); padding: 8px 18px; border-radius: 30px; font-weight: 700; cursor: pointer; transition: var(--transition);
+}
+.lang-btn:hover { background: var(--accent-lime); color: var(--bg-dark); border-color: var(--accent-lime); }
+.hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--white); cursor: pointer; }
+
+/* --------------------------------------
+   Premium Hero Section
+--------------------------------------- */
+.hero { position: relative; padding: 100px 0 60px; background: var(--bg-dark); overflow: hidden; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
+
+/* Hero Background Layers */
+.hero-bg-layers { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden; }
+.glow-emerald { position: absolute; top: -10%; left: -10%; width: 60%; height: 60%; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%); filter: blur(60px); animation: pulse-slow 8s infinite alternate; }
+.glow-lime { position: absolute; bottom: -20%; right: -10%; width: 70%; height: 70%; background: radial-gradient(circle, rgba(163, 230, 53, 0.12) 0%, transparent 70%); filter: blur(80px); animation: pulse-slow 10s infinite alternate-reverse; }
+
+.organic-lines { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; }
+.organic-lines path { fill: none; stroke: var(--accent-lime); stroke-width: 2; stroke-dasharray: 2000; stroke-dashoffset: 2000; animation: draw-lines 15s linear infinite alternate; }
+
+.particles-container { position: absolute; width: 100%; height: 100%; }
+.particle { position: absolute; background: var(--accent-lime); border-radius: 50%; opacity: 0.4; animation: float-particle 10s infinite linear; }
+.p1 { width: 6px; height: 6px; top: 20%; left: 10%; animation-duration: 12s; }
+.p2 { width: 4px; height: 4px; top: 60%; left: 30%; animation-duration: 8s; }
+.p3 { width: 8px; height: 8px; top: 30%; right: 20%; animation-duration: 15s; }
+.p4 { width: 5px; height: 5px; top: 80%; right: 40%; animation-duration: 10s; }
+.p5 { width: 3px; height: 3px; top: 40%; right: 10%; animation-duration: 14s; }
+
+/* Hero Grid & Content */
+.hero-container { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+
+.hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(163, 230, 53, 0.1); color: var(--accent-lime); padding: 8px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; margin-bottom: 24px; border: 1px solid rgba(163, 230, 53, 0.2); }
+.hero-title { font-size: 4.5rem; font-weight: 800; line-height: 1.1; color: var(--white); margin-bottom: 12px; letter-spacing: -1px; }
+.text-gradient { background: linear-gradient(135deg, var(--accent-lime), var(--accent-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-subtitle { display: block; color: var(--accent-warm); font-size: 2rem; font-weight: 700; margin-bottom: 24px; font-family: 'Tiro Devanagari Hindi', serif; }
+.hero-desc { font-size: 1.1rem; color: var(--text-light); margin-bottom: 40px; max-width: 550px; opacity: 0.9; }
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* =========================================================
+   HERO MAIN PRODUCT VISUAL
+   ========================================================= */
+
+.hero-visual {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   Main Product Container
+   --------------------------------------------------------- */
+
+.main-product-container {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 5;
+}
+
+
+/* ---------------------------------------------------------
+   Product Glow
+   --------------------------------------------------------- */
+
+.product-backglow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 280px;
+  height: 430px;
+
+  transform: translate(-50%, -50%);
+
+  background: var(--accent-bright);
+
+  border-radius: 50%;
+
+  filter: blur(75px);
+
+  opacity: 0.25;
+
+  animation: pulse-glow 4s ease-in-out infinite alternate;
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   Floating Product Wrapper
+   IMPORTANT:
+   Floating animation is on wrapper, NOT image.
+   This prevents conflict with rotation fade animation.
+   --------------------------------------------------------- */
+
+.product-float-wrapper {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  animation:
+    float-product
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+/* ---------------------------------------------------------
+   Rotating Product
+   --------------------------------------------------------- */
+
+.hero-main-product {
+
+  position: relative;
+
+  width: auto;
+
+  /*
+     Keeps different product dimensions
+     proportional.
+  */
+  max-width: 420px;
+
+  max-height: clamp(
+    280px,
+    42vh,
+    430px
+  );
+
+  object-fit: contain;
+
+  /*
+     Product stays sharp.
+     No blur is applied.
+  */
+  filter:
+    drop-shadow(
+      -15px
+      20px
+      25px
+      rgba(0, 0, 0, 0.55)
+    );
+
+  opacity: 1;
+
+  transform: scale(1);
+
+  transform-origin: center center;
+
+  /*
+     Smooth product switching.
+  */
+  transition:
+    opacity 0.6s cubic-bezier(
+      0.4,
+      0,
+      0.2,
+      1
+    ),
+    transform 0.6s cubic-bezier(
+      0.4,
+      0,
+      0.2,
+      1
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Product Name
+   --------------------------------------------------------- */
+
+.hero-product-label {
+
+  margin-top: 20px;
+
+  color: var(--accent-lime);
+
+  font-size: 0.95rem;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  background:
+    rgba(
+      3,
+      31,
+      26,
+      0.7
+    );
+
+  padding: 7px 20px;
+
+  border-radius: 30px;
+
+  border:
+    1px solid
+    rgba(
+      163,
+      230,
+      53,
+      0.25
+    );
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+
+  transform: scale(1);
+
+  transition:
+    opacity 0.6s cubic-bezier(
+      0.4,
+      0,
+      0.2,
+      1
+    ),
+    transform 0.6s cubic-bezier(
+      0.4,
+      0,
+      0.2,
+      1
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Product Exit Animation
+   --------------------------------------------------------- */
+
+.fade-exit {
+
+  opacity: 0 !important;
+
+  transform:
+    scale(0.88) !important;
+}
+/* Hero Bottom Trust Strip */
+.hero-trust-strip { position: relative; z-index: 3; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+.trust-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); padding: 16px 24px; border-radius: 16px; display: flex; align-items: center; gap: 12px; color: var(--white); font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.trust-card i { color: var(--accent-lime); font-size: 1.2rem; }
+
+/* --------------------------------------
+   Products Section (Light Sage)
+--------------------------------------- */
+.products-controls { margin-bottom: 48px; display: flex; flex-direction: column; gap: 24px; align-items: center; }
+.search-box { position: relative; width: 100%; max-width: 550px; }
+.search-box i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+.search-box input { width: 100%; padding: 16px 20px 16px 50px; border-radius: 30px; border: 1px solid var(--border-dark); background: var(--white); font-size: 1rem; outline: none; box-shadow: var(--shadow-sm); transition: var(--transition); }
+.search-box input:focus { border-color: var(--accent-bright); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); }
+
+.filter-tabs { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.filter-btn { padding: 10px 22px; border-radius: 30px; border: 1px solid var(--border-dark); background: var(--white); color: var(--text-muted); font-weight: 600; cursor: pointer; transition: var(--transition); box-shadow: var(--shadow-sm); }
+.filter-btn:hover, .filter-btn.active { background: var(--bg-emerald); color: var(--white); border-color: var(--bg-emerald); }
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 32px; align-items: stretch; }
+.product-card { background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border-dark); transition: var(--transition); display: flex; flex-direction: column; height: 100%; }
+.product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent-bright); }
+.product-img-wrapper { height: 260px; background: transparent; display: flex; align-items: center; justify-content: center; padding: 24px; border-bottom: 1px solid var(--border-dark); overflow: hidden; }
+.product-img-wrapper img { max-width: 90%; max-height: 90%; width: auto; height: auto; object-fit: contain; transition: var(--transition); filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
+.product-card:hover .product-img-wrapper img { transform: scale(1.06); }
+
+.product-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+.product-category-badge { align-self: flex-start; font-size: 0.75rem; font-weight: 800; background: var(--bg-sage); color: var(--bg-emerald); padding: 6px 12px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; border: 1px solid rgba(4, 59, 48, 0.1); }
+.product-title { font-size: 1.35rem; font-weight: 800; color: var(--bg-emerald); margin-bottom: 12px; }
+.product-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
+.product-meta { font-size: 0.85rem; background: var(--bg-sage); padding: 16px; border-radius: var(--radius-sm); margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.03); }
+.product-meta div { margin-bottom: 8px; color: var(--bg-emerald-deep); }
+.product-meta div:last-child { margin-bottom: 0; }
+.product-meta strong { color: var(--accent-bright); }
+
+/* --------------------------------------
+   About Section (Emerald Dark Theme)
+--------------------------------------- */
+.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: center; }
+.about-visual { position: relative; z-index: 2; }
+.dark-glass-card { background: rgba(3, 31, 26, 0.6); backdrop-filter: blur(12px); border: 1px solid var(--border-light); padding: 48px 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); text-align: center; }
+.accent-lime-text { font-size: 3.5rem; color: var(--accent-lime); margin-bottom: 20px; display: block; }
+.dark-glass-card h4 { font-size: 1.8rem; margin-bottom: 8px; }
+.div-light { background: var(--border-light); margin: 24px 0; }
+.tagline-quote { font-size: 1.4rem; font-weight: 800; color: var(--accent-warm); }
+.address-brief { font-size: 0.95rem; color: var(--text-muted-light); margin-top: 12px; }
+.dots-lime { position: absolute; bottom: -20px; right: -20px; width: 150px; height: 150px; background-image: radial-gradient(var(--accent-lime) 2px, transparent 2px); background-size: 20px 20px; opacity: 0.15; z-index: -1; }
+
+.about-content h2 { margin-bottom: 16px; font-size: 2.2rem; }
+.about-content h3 { font-size: 1.4rem; margin-bottom: 16px; font-weight: 600; }
+.about-content p { margin-bottom: 30px; font-size: 1.05rem; line-height: 1.8; }
+
+.dark-glass-box { display: flex; gap: 20px; background: rgba(3, 31, 26, 0.4); border: 1px solid var(--border-light); padding: 24px; border-radius: var(--radius-md); border-left: 5px solid var(--accent-lime); margin-bottom: 32px; }
+.vision-icon-wrap { width: 50px; height: 50px; background: rgba(163, 230, 53, 0.1); border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; }
+.vision-icon { font-size: 1.4rem; color: var(--accent-lime); }
+.dark-glass-box h4 { font-size: 1.2rem; margin-bottom: 6px; }
+
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.feature-item { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 1rem; }
+.lime-bg { width: 10px; height: 10px; background: var(--accent-lime); border-radius: 50%; box-shadow: 0 0 10px var(--accent-lime); }
+
+/* --------------------------------------
+   Contact Section (Dark Theme)
+--------------------------------------- */
+.contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; }
+.info-card { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px; transition: var(--transition); padding: 24px; border-radius: var(--radius-md); }
+.info-card:hover { transform: translateX(5px); border-left: 4px solid var(--accent-lime); background: rgba(3, 31, 26, 0.8); }
+.icon-lime { width: 50px; height: 50px; background: rgba(163, 230, 53, 0.1); color: var(--accent-lime); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.info-text h4 { font-size: 1.1rem; margin-bottom: 6px; }
+.info-text p { font-size: 0.95rem; }
+
+.grad-lime { background: linear-gradient(135deg, var(--accent-lime), var(--accent-bright)); color: var(--bg-dark); padding: 32px; border-radius: var(--radius-md); position: relative; overflow: hidden; box-shadow: var(--shadow-md); margin-top: 30px; }
+.bg-icon { position: absolute; right: -20px; bottom: -20px; font-size: 8rem; color: rgba(0,0,0,0.05); pointer-events: none; }
+.grad-lime h4 { font-size: 1.3rem; margin-bottom: 8px; font-weight: 800; }
+.grad-lime p { margin-bottom: 20px; font-weight: 500; }
+.text-dark-muted { color: #022c22; }
+
+.light-card { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: none; }
+.light-card h3 { font-size: 1.7rem; margin-bottom: 28px; font-weight: 800; }
+.form-group { margin-bottom: 22px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group label { display: block; font-size: 0.9rem; font-weight: 700; color: var(--bg-emerald); margin-bottom: 8px; }
+.form-group input, .form-group textarea { width: 100%; padding: 14px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border-dark); background: var(--bg-sage); font-family: inherit; font-size: 1rem; outline: none; transition: var(--transition); color: var(--bg-dark); }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--accent-bright); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); background: var(--white); }
+.input-with-icon { position: relative; }
+.input-with-icon i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--accent-bright); }
+.input-with-icon input { padding-left: 45px; background: rgba(16, 185, 129, 0.05); font-weight: 700; border-color: var(--accent-bright); color: var(--bg-emerald); }
+
+/* --------------------------------------
+   Footer
+--------------------------------------- */
+.footer {
+    padding-top: 80px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* FOOTER LOGO - NO WHITE BOX */
+.footer-logo-wrapper {
+    background: transparent !important;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    filter: drop-shadow(0 2px 6px rgba(163, 230, 53, 0.3));
+}
+.footer-links h4, .footer-contact h4 { color: var(--white); margin-bottom: 24px; font-size: 1.2rem; }
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links a:hover { color: var(--accent-lime); padding-left: 5px; }
+.footer-contact p { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; font-size: 0.95rem; }
+
+/* --------------------------------------
+   Animations
+--------------------------------------- */
+@keyframes float-product { 0% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(1.5deg); } 100% { transform: translateY(0) rotate(0deg); } }
+@keyframes float-complex { 0% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-20px) rotate(5deg); } 100% { transform: translateY(0) rotate(-5deg); } }
+@keyframes spin-slow { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes pulse-slow { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.1); opacity: 0.8; } }
+@keyframes pulse-glow { 0% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; } 100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.4; } }
+@keyframes draw-lines { to { stroke-dashoffset: 0; } }
+@keyframes float-particle { 0% { transform: translateY(100vh) translateX(0) scale(1); opacity: 0; } 10% { opacity: 0.4; } 90% { opacity: 0.4; } 100% { transform: translateY(-20vh) translateX(50px) scale(0); opacity: 0; } }
+
+/* Scroll Reveals */
+.reveal { opacity: 0; transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: translate(0, 0) scale(1); }
+.fade-up { transform: translateY(40px); }
+.fade-left { transform: translateX(40px); }
+.fade-right { transform: translateX(-40px); }
+.scale-in { transform: scale(0.95); }
+
+/* Hero specific initial staggers handled by JS adding active class */
+.hero-stagger > * { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+.hero-stagger.active > * { opacity: 1; transform: translateY(0); }
+.hero-stagger.active > *:nth-child(1) { transition-delay: 0.1s; }
+.hero-stagger.active > *:nth-child(2) { transition-delay: 0.2s; }
+.hero-stagger.active > *:nth-child(3) { transition-delay: 0.3s; }
+.hero-stagger.active > *:nth-child(4) { transition-delay: 0.4s; }
+.hero-stagger.active > *:nth-child(5) { transition-delay: 0.5s; }
+
+.fade-left-hero { opacity: 0; transform: translateX(50px); transition: all 1s ease 0.4s; }
+.fade-left-hero.active { opacity: 1; transform: translateX(0); }
+
+/* --------------------------------------
+   Mobile Queries
+--------------------------------------- */
+@media (max-width: 992px) {
+  .hero { padding: 120px 0 60px; text-align: center; }
+  .hero-container { grid-template-columns: 1fr; gap: 60px; }
+  .hero-desc { margin: 0 auto 30px; }
+  .hero-title { font-size: 3.5rem; }
+  .hero-buttons { justify-content: center; }
+  .hero-visual { height: 450px; }
+  .hero-main-product { max-height: 380px; }
+  .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .about-visual { order: -1; }
+  .hero-trust-strip { gap: 10px; }
+  .trust-card { font-size: 0.8rem; padding: 12px 16px; }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav-menu { position: fixed; top: 90px; left: -100%; width: 100%; height: calc(100vh - 90px); background: rgba(3, 31, 26, 0.98); padding: 40px; transition: var(--transition); overflow-y: auto; }
+  .header.scrolled .nav-menu { top: 75px; height: calc(100vh - 75px); }
+  .nav-menu.active { left: 0; }
+  .nav-list { flex-direction: column; gap: 24px; align-items: center; }
+  .top-bar-content { justify-content: center; text-align: center; }
+  .hero-title { font-size: 2.8rem; }
+  .hero-subtitle { font-size: 1.5rem; }
+}
+/* =========================================================
+   FLOATING WHATSAPP CHAT BUTTON
+   ========================================================= */
+
+.whatsapp-float {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #25D366;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 32px;
+
+  text-decoration: none;
+
+  z-index: 9999;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Hover effect */
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   WhatsApp Pulse Ring
+   ========================================================= */
+
+.pulse-ring {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  height: 100%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 2px solid #25D366;
+
+  animation: whatsapp-pulse 2.5s ease-out infinite;
+
+  pointer-events: none;
+}
+
+
+@keyframes whatsapp-pulse {
+
+  0% {
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
+  }
+
+  70% {
+    width: 88px;
+    height: 88px;
+    opacity: 0;
+  }
+
+  100% {
+    width: 88px;
+    height: 88px;
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   Mobile WhatsApp Button
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .whatsapp-float {
+
+    width: 54px;
+    height: 54px;
+
+    right: 18px;
+    bottom: 18px;
+
+    font-size: 28px;
+
+  }
+
+
+  @keyframes whatsapp-pulse {
+
+    0% {
+      width: 54px;
+      height: 54px;
+      opacity: 0.7;
+    }
+
+    70% {
+      width: 80px;
+      height: 80px;
+      opacity: 0;
+    }
+
+    100% {
+      width: 80px;
+      height: 80px;
+      opacity: 0;
+    }
+
+  }
+
+}
+/* =========================================================
+   CROPTON LOGO - FINAL SIZE & VISIBILITY
+   ========================================================= */
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-link .logo-img {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    /* Bigger logo */
+    height: 80px;
+    width: auto;
+
+    object-fit: contain;
+
+    /* Make the logo stand out */
+    filter:
+        drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Slight pop on hover */
+.logo-link:hover .logo-img {
+    transform: scale(1.06);
+
+    filter:
+        drop-shadow(0 3px 8px rgba(163, 230, 53, 0.35));
+}
+
+
+/* =========================================================
+   MOBILE LOGO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .logo-link .logo-img {
+        height: 58px;
+    }
+
+}
+/* =========================================================
+   FOOTER LOGO - FINAL FIX
+   ========================================================= */
+
+footer .logo-img,
+.footer .logo-img {
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    width: auto;
+    height: 58px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 2px 5px rgba(163, 230, 53, 0.25));
+}
+
+/* Footer logo container */
+footer .logo-link,
+.footer .logo-link {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    footer .logo-img,
+    .footer .logo-img {
+        height: 52px;
+    }
+}
