@@ -10,7 +10,7 @@ const productsData = [
     image: "assets/images/achuk.png",
     descEn: "Advanced bio-insecticide and miticide for control of thrips, mites, and whitefly.", descHi: "थ्रिप्स, माइट्स और व्हाइटफ्लाई नियंत्रण के लिए उन्नत बायो-इन्सेक्टिसाइड।",
     targetsEn: "Thrips, Mites, Whitefly", targetsHi: "थ्रिप्स, माइट्स, व्हाइटफ्लाई",
-    cropsEn: "Cotton, Chilli, Tomato, Brinjal", cropsHi: "कपास, मिर्च, टमाटर, बैंगन",
+    cropsEn: "Cotton, Chilli, Tomato, Brinjal & All Crops", cropsHi: "कपास, मिर्च, टमाटर, बैंगन और सभी फसलें",
     dosageEn: "25–30 ml per pump", dosageHi: "25–30 मिली प्रति पंप", packing: "25ml, 50ml, 100ml, 250ml, 500ml, 1L, 5L"
   },
   {
@@ -19,7 +19,7 @@ const productsData = [
     image: "assets/images/rebel.png",
     descEn: "Prepared from natural ingredients to effectively manage sucking pests while supporting overall crop growth.", descHi: "प्राकृतिक अवयवों से निर्मित, जो फसल वृद्धि के साथ कीटों पर प्रभावी नियंत्रण देता है।",
     targetsEn: "Thrips, Mites, Whitefly", targetsHi: "थ्रिप्स, माइट्स, व्हाइटफ्लाई",
-    cropsEn: "Cotton, Chilli, Tomato, Brinjal", cropsHi: "कपास, मिर्च, टमाटर, बैंगन",
+    cropsEn: "Cotton, Chilli, Tomato, Brinjal & All Crops", cropsHi: "कपास, मिर्च, टमाटर, बैंगन और सभी फसलें",
     dosageEn: "25–30 ml per pump", dosageHi: "25–30 मिली प्रति पंप", packing: "250ml, 500ml, 1L"
   },
   {
@@ -28,17 +28,17 @@ const productsData = [
     image: "assets/images/punch.png",
     descEn: "NPK-rich promoter for early root establishment, foliage greenery, and disease resistance.", descHi: "NPK युक्त प्रमोटर जो शुरुआती जड़ों के विकास, हरियाली और रोग प्रतिरोधक क्षमता में सहायक है।",
     targetsEn: "Root Growth & Greenery", targetsHi: "जड़ विकास एवं हरियाली",
-    cropsEn: "Paddy, Cotton, Maize, Pulses, Okra", cropsHi: "धान, कपास, मक्का, दलहन, भिंडी",
-    dosageEn: "25–30 ml per 20L water", dosageHi: "25–30 मिली प्रति 20L पानी", packing: "500ml, 1L, 5L"
+    cropsEn: "Paddy, Maize, Pulses, Okra & All Crops", cropsHi: "धान, कपास, मक्का, दलहन, भिंडी और सभी फसलें",
+    dosageEn: "50–70 ml per 15-20L water", dosageHi: "50–70 मिली प्रति 15-20L पानी", packing: "500ml, 1L, 5L"
   },
   {
     id: 4, nameEn: "Vardhan", nameHi: "वर्धन", category: "growth",
     categoryNameEn: "Fruit Setting Formula", categoryNameHi: "फ्रूट सेटिंग फार्मूला",
     image: "assets/images/vardhan.png",
     descEn: "Strengthens flower-to-fruit transition, prevents flower drop, and ensures uniform fruit size.", descHi: "फूल से फल बनने की प्रक्रिया को मजबूत करता है, फूल झड़ने से रोकता है और फल का आकार समान बनाता है।",
-    targetsEn: "Fruit Setting & Drop Reduction", targetsHi: "फल धारण एवं झड़ने से बचाव",
+    targetsEn: "Fruit Setting, Drop Reduction, Increase <br>&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;size & Reduce Rottening of vegetable ", targetsHi:"फल धारण, झड़ने से बचाव, आकार में वृद्धि एवं सब्जियों<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; को सड़ने से बचाव " ,
     cropsEn: "All Crops", cropsHi: "सभी फसलें",
-    dosageEn: "1st: 1.5ml/L, 2nd: 1ml/L, 3rd: 0.5ml/L", dosageHi: "पहला: 1.5ml/L, दूसरा: 1ml/L, तीसरा: 0.5ml/L", packing: "250ml, 500ml, 1L, 5L"
+    dosageEn:"1st: 1.5ml/L, 2nd: 1ml/L, 3rd: 0.5ml/L<br><span class='dosage-point'>&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;• 1L per acre in Drip</span>" , dosageHi:"पहला: 1.5ml/L, दूसरा: 1ml/L, तीसरा: 0.5ml/L<br><span class='dosage-point'>&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;•ड्रिप द्वारा 1 लीटर प्रति एकड़</span>" , packing: "250ml, 500ml, 1L, 5L"
   },
   {
     id: 5, nameEn: "Tejas+", nameHi: "तेजस+", category: "growth",
@@ -64,7 +64,7 @@ const productsData = [
     image: "assets/images/copek.png",
     descEn: "Fasal Ki Jaan — Supports root strength, new shoots, leaf shine, and nutrient uptake.", descHi: "फसल की जान — जड़ों की मजबूती, नई कोपलों, पत्तियों की चमक और पोषण अवशोषण में सहायक।",
     targetsEn: "New Shoot Growth & Vigour", targetsHi: "नई कोपलों और पौधों का विकास",
-    cropsEn: "Cotton, Chilli, Paddy, Onion, Tomato", cropsHi: "कपास, मिर्च, धान, प्याज, टमाटर",
+    cropsEn: "Cotton, Chilli, Paddy, Onion & All Crops", cropsHi: "कपास, मिर्च, धान, प्याज, टमाटर और सभी फसलें",
     dosageEn: "20–30 ml per pump", dosageHi: "20–30 मिली प्रति पंप", packing: "25ml, 50ml, 100ml, 250ml, 500ml, 1L"
   },
   {
@@ -72,18 +72,18 @@ const productsData = [
     categoryNameEn: "Bio-Formula", categoryNameHi: "बायो-फार्मूला",
     image: "assets/images/hymn_gold.png",
     descEn: "Advanced seaweed extract formula for controlling caterpillars, thrips, and mites.", descHi: "इल्ली, थ्रिप्स और माइट्स के नियंत्रण के लिए समुद्री शैवाल निष्कर्षण आधारित उन्नत फॉर्मूला।",
-    targetsEn: "Caterpillar, Thrips, Mites", targetsHi: "इल्ली, थ्रिप्स, माइट्स",
-    cropsEn: "Chilli, Tomato, Brinjal, Okra, Cotton", cropsHi: "मिर्च, टमाटर, बैंगन, भिंडी, कपास",
-    dosageEn: "50 ml per pump", dosageHi: "50 मिली प्रति पंप", packing: "250ml, 500ml"
+    targetsEn: "Caterpillar, Thrips, Mites,  Fruit Fly", targetsHi: "इल्ली, थ्रिप्स, माइट्स, फल मक्खी",
+    cropsEn: "Chilli, Brinjal, Okra, Cotton & All Crops", cropsHi: "मिर्च, बैंगन, भिंडी, कपास,  और सभी फसलें",
+    dosageEn: "30 ml per pump", dosageHi: "30 मिली प्रति पंप", packing: "250ml, 500ml"
   },
   {
     id: 9, nameEn: "Tejas", nameHi: "तेजस", category: "pest",
     categoryNameEn: "Bio-Formula", categoryNameHi: "बायो-फार्मूला",
     image: "assets/images/tejas.png",
     descEn: "Effective pest management formula against sucking insects and caterpillars.", descHi: "रस चूसक कीटों और इल्लियों के खिलाफ प्रभावी कीट प्रबंधन फॉर्मूला।",
-    targetsEn: "Caterpillar, Thrips, Mites", targetsHi: "इल्ली, थ्रिप्स, माइट्स",
-    cropsEn: "Chilli, Tomato, Vegetables", cropsHi: "मिर्च, टमाटर, सब्जियां",
-    dosageEn: "50 ml per pump", dosageHi: "50 मिली प्रति पंप", packing: "250ml"
+    targetsEn: "Caterpillar, Thrips, Mites, White fly, Mahu, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jassid", targetsHi: "इल्ली, थ्रिप्स, माइट्स, सफेद मक्खी, माहू, जैसिड",
+    cropsEn: "Chilli, Tomato, Vegetables & All Crops", cropsHi: "मिर्च, टमाटर, सब्जियां और सभी फसलें",
+    dosageEn: "30 ml per pump", dosageHi: "30  मिली प्रति पंप", packing: "250ml"
   },
   {
     id: 10, nameEn: "Humicrop", nameHi: "हुमिक्रोप", category: "soil",
@@ -92,7 +92,7 @@ const productsData = [
     descEn: "Potassium Humate organic soil conditioner. Enhances moisture retention and soil fertility.", descHi: "पोटेशियम ह्यूमेट जैविक सॉइल कंडीशनर। नमी धारण और मिट्टी की उर्वरता में सुधार करता है।",
     targetsEn: "Soil Fertility & Rooting", targetsHi: "मिट्टी की उर्वरता एवं जड़ विकास",
     cropsEn: "All Crops", cropsHi: "सभी फसलें",
-    dosageEn: "500 g per acre", dosageHi: "500 ग्राम प्रति एकड़", packing: "500g"
+    dosageEn: "1 kg per acre", dosageHi: "1 किलो ग्राम प्रति एकड़", packing: "500g"
   },
   {
     id: 11, nameEn: "Quantum", nameHi: "क्वांटम", category: "soil",
@@ -109,8 +109,8 @@ const productsData = [
     image: "assets/images/rooth_growth.png",
     descEn: "Deep root system development booster paired with broad pest resistance.", descHi: "गहरी जड़ों के विकास को बढ़ावा देने वाला और कीटों के प्रति रक्षा प्रदान करने वाला उत्पाद।",
     targetsEn: "Root System & Health", targetsHi: "जड़ प्रणाली और स्वास्थ्य",
-    cropsEn: "Paddy, Maize, Gram, Chilli, Pulses", cropsHi: "धान, मक्का, चना, मिर्च, दलहन",
-    dosageEn: "3–4 ml per Litre water", dosageHi: "3–4 मिली प्रति लीटर पानी", packing: "500ml, 1L"
+    cropsEn: "All Crops", cropsHi: "सभी फसलें",
+    dosageEn: "100-120 ml per 15-20L water", dosageHi: "100-120 ml प्रति 15-20L पानी", packing: "500ml, 1L"
   },
   {
     id: 13, nameEn: "K-Hume", nameHi: "के ह्यूम", category: "soil",
@@ -118,8 +118,8 @@ const productsData = [
     image: "assets/images/k_hyumn.png",
     descEn: "Humic and Fulvic acid derivatives supporting healthy crop growth and pest defense.", descHi: "ह्यूमिक और फुलविक एसिड उत्पाद जो फसल विकास और कीट रक्षा में सहायक हैं।",
     targetsEn: "Soil & Root Enhancement", targetsHi: "मिट्टी और जड़ सुधार",
-    cropsEn: "Paddy, Maize, Chilli, Tomato", cropsHi: "धान, मक्का, मिर्च, टमाटर",
-    dosageEn: "3–4 ml per Litre water", dosageHi: "3–4 मिली प्रति लीटर पानी", packing: "250ml, 500ml, 1L"
+    cropsEn: "All Crops", cropsHi: "सभी फसलें",
+    dosageEn: "100–120 ml per Litre water", dosageHi: " 100-120 ml प्रति 15-20L पानी", packing: "250ml, 500ml, 1L"
   },
   {
     id: 14, nameEn: "Black Boost", nameHi: "ब्लैक बूस्ट", category: "soil",
@@ -127,27 +127,28 @@ const productsData = [
     image: "assets/images/black_boost.png",
     descEn: "18% Humic Acid formulation driving strong foliage, disease defense, and crop vitality.", descHi: "18% ह्यूमिक एसिड फॉर्मूला जो पत्तियों की मजबूती और फसल की जीवन शक्ति बढ़ाता है।",
     targetsEn: "Foliage & Yield Boost", targetsHi: "पत्तियों और उपज में वृद्धि",
-    cropsEn: "Chilli, Paddy, Maize, Vegetables", cropsHi: "मिर्च, धान, मक्का, सब्जियां",
-    dosageEn: "3–4 ml per Litre water", dosageHi: "3–4 मिली प्रति लीटर पानी", packing: "1L"
+    cropsEn: "All Crops", cropsHi: "सभी फसलें",
+    dosageEn: "100-120 ml per Litre water", dosageHi: "100-120 ml प्रति 15-20L पानी", packing: "1L"
   },
   {
-    id: 15, nameEn: "Dimond — Plant Booster", nameHi: "डीमोंड — प्लांट बूस्टर", category: "fungi",
-    categoryNameEn: "Natural Fungicide", categoryNameHi: "नेचुरल फंगीसाइड",
-    image: "assets/images/dimond.png",
-    descEn: "Bio-fungicide for controlling powdery mildew, downy mildew, blight, and leaf spot.", descHi: "पाउडरी मिल्ड्यू, डाउनी मिल्ड्यू, ब्लाइट और लीफ स्पॉट को नियंत्रित करने के लिए प्राकृतिक फंगीसाइड।",
-    targetsEn: "Mildew, Blight, Leaf Spot", targetsHi: "मिल्ड्यू, ब्लाइट, पत्ती धब्बा",
-    cropsEn: "Vegetables, Fruits, Grains", cropsHi: "सब्जियां, फल, अनाज",
-    dosageEn: "250g/acre drip OR 2g/L spray", dosageHi: "250 ग्राम/एकड़ ड्रिप या 2 ग्राम/ली छिड़काव", packing: "250g"
-  },
-  {
-    id: 16, nameEn: "Sapot", nameHi: "सपोट", category: "growth",
+    id: 15, nameEn: "Sapot", nameHi: "सपोट", category: "growth",
     categoryNameEn: "Natural Bio-Booster", categoryNameHi: "नेचुरल बायो-बूस्टर",
     image: "assets/images/sapot.png",
     descEn: "Advanced plant booster delivering energy, deep greenness, and nutrient absorption.", descHi: "पौधों को ऊर्जा, गहरा हरा रंग और बेहतर पोषण प्रदान करने वाला एडवांस प्लांट बूस्टर।",
     targetsEn: "Plant Energy & Quality", targetsHi: "पौधों की ऊर्जा एवं गुणवत्ता",
-    cropsEn: "Vegetables, Fruits, Grains", cropsHi: "सब्जियां, फल, अनाज",
+    cropsEn: "Vegetables, Fruits, Grains & All crops", cropsHi: "सब्जियां, फल, अनाज और सभी फसलें",
     dosageEn: "10 pumps", dosageHi: "10 पंप", packing: "250g"
   },
+  {
+    id: 16, nameEn: "Dimond — Plant Booster", nameHi: "डीमोंड — प्लांट बूस्टर", category: "fungi",
+    categoryNameEn: "Natural Fungicide", categoryNameHi: "नेचुरल फंगीसाइड",
+    image: "assets/images/dimond.png",
+    descEn: "Bio-fungicide for controlling powdery mildew, downy mildew, blight, and leaf spot.", descHi: "पाउडरी मिल्ड्यू, डाउनी मिल्ड्यू, ब्लाइट और लीफ स्पॉट को नियंत्रित करने के लिए प्राकृतिक फंगीसाइड।",
+    targetsEn: "Mildew, Blight, Leaf Spot", targetsHi: "मिल्ड्यू, ब्लाइट, पत्ती धब्बा",
+    cropsEn: "Vegetables, Fruits, Grains & All Crops", cropsHi: "सब्जियां, फल, अनाज और सभी फसलें",
+    dosageEn: "250g/acre drip OR 2g/L spray", dosageHi: "250 ग्राम/एकड़ ड्रिप या 2 ग्राम/ली छिड़काव", packing: "250g"
+  },
+  
   {
     id: 17, nameEn: "Current", nameHi: "करंट", category: "pest",
     categoryNameEn: "Bio-Insecticide", categoryNameHi: "बायो-इन्सेक्टिसाइड",
@@ -155,7 +156,7 @@ const productsData = [
     descEn: "Power-packed larva controller. Rapidly stops early stage leaf-eating caterpillars.", descHi: "शक्तिशाली इल्ली नियंत्रक। शुरुआती अवस्था में पत्तियां खाने वाले लार्वा को तुरंत रोकता है।",
     targetsEn: "Larvae / Leaf Eating Caterpillars", targetsHi: "इल्ली / लार्वा",
     cropsEn: "All Crops", cropsHi: "सभी फसलें",
-    dosageEn: "25 ml per pump", dosageHi: "25 मिली प्रति पंप", packing: "250ml, 500ml"
+    dosageEn: "25-30 ml per 15-20L pump", dosageHi: "15-20 लीटर के पंप के लिए 25-30 ml", packing: "250ml, 500ml"
   },
   {
     id: 18, nameEn: "Roman", nameHi: "रोमन", category: "pest",
@@ -173,7 +174,7 @@ const productsData = [
     descEn: "Seaweed extract based biostimulant with high action against leaf-damaging larvae.", descHi: "पत्तियों को नुकसान पहुंचाने वाली इल्ली पर तेज़ असर वाला सी-वीड एक्सट्रैक्ट फॉर्मूला।",
     targetsEn: "Larvae", targetsHi: "इल्ली",
     cropsEn: "All Crops", cropsHi: "सभी फसलें",
-    dosageEn: "25 ml per pump", dosageHi: "25 मिली प्रति पंप", packing: "100ml, 250ml, 500ml, 1L"
+    dosageEn: "25-30 ml per  15-20L pump", dosageHi: "15-20 लीटर के पंप के लिए 25-30 ml", packing: "100ml, 250ml, 500ml, 1L"
   },
   {
     id: 20, nameEn: "Alicon", nameHi: "अलिकों", category: "growth",

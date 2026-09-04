@@ -451,6 +451,7 @@ img { max-width: 100%; height: auto; display: block; }
 .vision-icon { font-size: 1.4rem; color: var(--accent-lime); }
 .dark-glass-box h4 { font-size: 1.2rem; margin-bottom: 6px; }
 
+
 .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .feature-item { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 1rem; }
 .lime-bg { width: 10px; height: 10px; background: var(--accent-lime); border-radius: 50%; box-shadow: 0 0 10px var(--accent-lime); }
@@ -800,4 +801,9 @@ footer .logo-link,
     .footer .logo-img {
         height: 52px;
     }
+}
+.dosage-point {
+    color: inherit;
+    display: inline-block;
+    margin-top: 4px;
 }
